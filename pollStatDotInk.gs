@@ -30,7 +30,7 @@ function getLastFullRowByColumnArray() {
 
 //Main Function. Pulls data from stat.ink. ime the api caps at 100 shifts.
 function pollStatDotInk() {
-  var response = UrlFetchApp.fetch("https://stat.ink/@triangle/salmon3.json");
+  var response = UrlFetchApp.fetch("https://stat.ink/@[username]/salmon3.json");
   var json = response.getContentText();
   var data = JSON.parse(json);
   var output = []
