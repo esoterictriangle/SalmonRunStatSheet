@@ -18,7 +18,7 @@ function onOpen() {
 // From answer https://stackoverflow.com/a/9102463/1677912
 // modified to get last full row instead of first empty
 function getLastFullRowByColumnArray() {
-  var spr = SpreadsheetApp.getActiveSpreadsheet();
+  var spr = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("data");
   var column = spr.getRange('A:A');
   var values = column.getValues(); // get all data in one call
   var ct = 0;
