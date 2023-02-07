@@ -21,3 +21,7 @@ You can best determine whether you need to automate s3s or just start it manuall
 8. jump back to the Apps Script tab and choose the alarm clock icon `Triggers` tab on the far left
 9. click `Add Trigger` in the bottom right
 10. set the function to `PollStatsDotInk`, the event source as `Time-driven` and then set your frequency. You just need this to run often enough that you never have more than 100 shifts between script runs. I have it running daily for simplicity's sake.
+
+# add lost data function
+the `checkStatDotInkURL()` function checks a url against your data and either edits its row or adds a new row.
+To use it, insert the tail end of a stat.ink url (e.g. the bolded section of this url: stat.ink/@triangle/salmon3/**6a9137ad-438d-4a4f-91ad-cddc6f0dda8f**) into the appropriate cell on your spreadsheet's stat sheet and use the new `check URL` command in the stats.ink dropdown. This function assumes the sheet you're using to visualize your data is named `stats`; if yours is something else, adjust line 114 apropriately or rename your stat sheet. This function currently has C20 set as the target cell--see line 116 to adjust to a different target cell.
